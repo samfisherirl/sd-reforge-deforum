@@ -1,3 +1,11 @@
+# Link to the comment fix origin
+
+found this fix looking to setup controlnet for deforum on reforge 
+
+https://github.com/deforum-art/sd-webui-deforum/issues/949#issuecomment-1975278527
+
+
+below is previous readme
 
 # Deforum Stable Diffusion — official extension for Forge
 
