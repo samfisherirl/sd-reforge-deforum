@@ -19,7 +19,6 @@ import shutil
 import hashlib
 from modules.shared import opts
 from basicsr.utils.download_util import load_file_from_url
-
 def debug_print(message):
     DEBUG_MODE = opts.data.get("deforum_debug_mode_enabled", False)
     if DEBUG_MODE:
