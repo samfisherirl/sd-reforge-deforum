@@ -1,4 +1,8 @@
-# Link to the comment fix origin
+# Don't Skip
+
+You'll need to go to the 'extension' folder in /my_sd_reforge/webui/. Right click on the extensions folder, and uncheck read only. then click okay. This allows controlnet extension to be accessed from deforum. 
+
+Moreover, to download controlnet, I downloaded it in forge, because I was testing both. Then copied the folder to the reforge location. You need to uncheck readonly after this step. 
 
 found this fix looking to setup controlnet for deforum on reforge 
 
