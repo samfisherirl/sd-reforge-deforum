@@ -162,19 +162,42 @@ def setup_controlnet_ui_raw():
 
     return locals()
 
+
+def default_controlnet_scheme():
+    return {
+        "enabled": True,
+        "pixel_perfect": False,
+        "low_vram": False,
+        "overwrite_frames": True,
+        "module": "none",
+        "model": "None",
+        "weight": "0:(1)",
+        "guidance_start": "0:(0.0)",
+        "guidance_end": "0:(1.0)",
+        "processor_res": 64,
+        "threshold_a": 64,
+        "threshold_b": 64,
+        "resize_mode": "Inner Fit (Scale to Fit)",
+        "control_mode": "Balanced",
+        "loopback_mode": False,
+        "vid_path": '',
+        "mask_vid_path": ''
+    }
+
+
 def setup_controlnet_ui():
     if not find_controlnet():
         gr.HTML("""<a style='target='_blank' href='https://github.com/Mikubill/sd-webui-controlnet'>ControlNet not found. Please install it :)</a>""", elem_id='controlnet_not_found_html_msg')
         return {}
-
     try:
         return setup_controlnet_ui_raw()
     except Exception as e:
         print(f"'ControlNet UI setup failed with error: '{e}'!")
-        gr.HTML(f"""
-                Failed to setup ControlNet UI, check the reason in your commandline log. Please, downgrade your CN extension to <a style='color:Orange;' target='_blank' href='https://github.com/Mikubill/sd-webui-controlnet/archive/c9340671d6d59e5a79fc404f78f747f969f87374.zip'>c9340671d6d59e5a79fc404f78f747f969f87374</a> or report the problem <a style='color:Orange;' target='_blank' href='https://github.com/Mikubill/sd-webui-controlnet/issues'>here</a>.
-                """, elem_id='controlnet_not_found_html_msg')
-        return {}
+        gr.HTML(f"""   
+            Failed to setup ControlNet UI, check the reason in your commandline log. Please, downgrade your CN extension to <a style='color:Orange;' target='_blank' href='https://github.com/Mikubill/sd-webui-controlnet/archive/c9340671d6d59e5a79fc404f78f747f969f87374.zip'>c9340671d6d59e5a79fc404f78f747f969f87374</a> or report the problem <a style='color:Orange;' target='_blank' href='https://github.com/Mikubill/sd-webui-controlnet/issues'>here</a>.   
+        """, elem_id='controlnet_not_found_html_msg')
+        return default_controlnet_scheme()  # Provide a default scheme if setup fails
+
 
 def controlnet_component_names():
     if not find_controlnet():
