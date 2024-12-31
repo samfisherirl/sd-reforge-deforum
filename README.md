@@ -8,6 +8,12 @@ found this fix looking to setup controlnet for deforum on reforge
 
 https://github.com/deforum-art/sd-webui-deforum/issues/949#issuecomment-1975278527
 
+## Fixes
+
+- Works with controlnet right out of the install tab
+- (in progress) working to fix loading settings from other UI versions where they dont break controlnet
+
+
 
 below is previous readme
 
